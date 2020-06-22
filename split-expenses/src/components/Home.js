@@ -1,24 +1,19 @@
 import React, { Component } from 'react';
-
+import {firestore} from './Firebase';
 import Trips from './Trips';
 
 class Home extends Component {
-  state = {
-    trips: [
-      {
-        id: '1',
-        title: 'A Very Hot Take',
-        description: 'Hello 1'
-        
-      },
-      {
-        id: '2',
-        title: 'The Sauciest of Opinions',
-        description: 'Hello 2'
-        
-      },
-    ],
-  };
+    state = {
+        trips: [],
+      };
+
+  componentDidMount = async () => {
+    const snapshot = await firestore.collection('trips').get();
+  
+    const trips = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  
+    this.setState({ trips });
+  }
 
   render() {
     const { trips } = this.state;
