@@ -1,31 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import {firestore} from './Firebase';
 import Trips from './Trips';
+import SignIn from './SignIn';
+import { TripsContext } from '../providers/TripsProvider';
 
 
-class Home extends Component {
-    state = {
-        trips: [],
-      };
-
-  componentDidMount = async () => {
-    this.unsubscribe = firestore.collection('trips').onSnapshot(snapshot => { // NEW
-        const trips = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-  
-    this.setState({ trips });
-    });
-  }
-
-  render() {
-    const { trips } = this.state;
-
+const  Home = () => {
     return (
         <div>
         <h1>Split Expense</h1>
-        <Trips trips={trips} />
+        <SignIn/>
+        <Trips />
         </div>
-    );
-  }
+    )
 }
 
 export default Home;

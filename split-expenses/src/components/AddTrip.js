@@ -13,17 +13,22 @@ function AddTrip(){
     const handleClickOpen = () => {
         setOpen(true);
       };
+
+    const handleClose = () => {
+        setOpen(false);
+      };
     
-      const handleClose =  async () => {
+    const handleSubmit =  async () => {
         const trip = {
             title: title,
             description : description
         }
         await firestore.collection('trips').add(trip);
+  
         setOpen(false);
       };
     return(
-        <>
+        <div>
         <Fab aria-label="add" onClick={handleClickOpen}>
         <AddIcon />
         </Fab>
@@ -51,11 +56,14 @@ function AddTrip(){
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} >
+            Cancel
+          </Button>
+          <Button onClick={handleSubmit} >
             Add
           </Button>
         </DialogActions>
       </Dialog>
-      </>
+      </div>
     )
 }
 
