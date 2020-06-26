@@ -17,10 +17,7 @@ function App() {
       <Header/>
       <Link to="/"><h1>App</h1></Link>
       <Switch>
-      <Route path="/login" component={SignIn} />
-      <RequireAuth>
       <Route path="/" component={Home} />
-      </RequireAuth>
       </Switch>
       </TripsProvider>
       </UserProvider>

@@ -3,8 +3,14 @@ import React from 'react';
 import {SignOut} from './Firebase'
 
 function Signout(){
+
+    const handleSignOut = () => {
+       var a =  SignOut();
+    }
+
+
     return(
-        <Button variant="contained" color="primary" onClick={SignOut}>
+        <Button variant="contained" color="primary" onClick={handleSignOut}>
             SignOut 
         </Button>
     )
