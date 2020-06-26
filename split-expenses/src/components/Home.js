@@ -1,8 +1,7 @@
-import React, { Component, useContext } from 'react';
-import {firestore} from './Firebase';
+import React from 'react';
 import Trips from './Trips';
 import SignIn from './SignIn';
-import { TripsContext } from '../providers/TripsProvider';
+import Signout from './SignOut';
 
 
 const  Home = () => {
@@ -10,6 +9,7 @@ const  Home = () => {
         <div>
         <h1>Split Expense</h1>
         <SignIn/>
+        <Signout/>
         <Trips />
         </div>
     )
