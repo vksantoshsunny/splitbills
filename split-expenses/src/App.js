@@ -7,7 +7,8 @@ import TripsProvider from './providers/TripsProvider'
 import {Theme} from './Theme'
 import UserProvider from './providers/UserProvider';
 import SignIn from './components/SignIn';
-import RequireAuth from './components/RequireAuth';
+import AuthRoute from './components/AuthRoute';
+import TripDetails from './components/TripDetails'
 function App() {
   return (
     <Router>
@@ -15,7 +16,9 @@ function App() {
       <UserProvider>
       <TripsProvider>
       <Switch>
-      <Route path="/" component={Home} />
+      <AuthRoute path="/" exact={true} component={Home} />
+      <AuthRoute path="/trips/:id" exact={true} component={TripDetails} />
+      <Route path="/login" exact={true} component={SignIn} />
       </Switch>
       </TripsProvider>
       </UserProvider>

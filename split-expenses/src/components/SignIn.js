@@ -1,12 +1,29 @@
 import {Button} from '@material-ui/core'
-import React from 'react';
+import React, { useState } from 'react';
 import {SignInWithGoogle} from './Firebase'
+import { Link, Redirect } from 'react-router-dom';
 
-function SignIn(){
+function SignIn(props){
+
+    const { from } = props.location.state || { from: { pathname: "/" } };
+    const [redirectToReferrer, setRedirectToReferrer] = useState(false);
+
+    const handleLogin = () => {
+        SignInWithGoogle();
+        setRedirectToReferrer(true);
+    }
+
+    if (redirectToReferrer) {
+        return <Redirect to={from} />;
+      }
+
     return(
-        <Button variant="contained" color="primary" onClick={SignInWithGoogle}>
+        <>
+        <Link to="/">App</Link>
+        <Button variant="contained" color="primary" onClick={handleLogin}>
             Sign-In Google
         </Button>
+        </>
     )
 }
 

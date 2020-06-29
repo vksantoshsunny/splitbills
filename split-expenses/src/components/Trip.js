@@ -1,8 +1,12 @@
-import {Card, CardContent, Typography, IconButton} from '@material-ui/core'
+import {Card, CardContent, Typography, IconButton, CardActionArea} from '@material-ui/core'
 import DeleteIcon from '@material-ui/icons/Delete';
 import React from 'react';
 import { firestore } from './Firebase'
 import { withStyles } from "@material-ui/core/styles";
+<<<<<<< HEAD
+=======
+import { useHistory } from 'react-router-dom';
+>>>>>>>  updated grid layout
 
 
 const styles = muiBaseTheme => ({
@@ -41,17 +45,34 @@ const styles = muiBaseTheme => ({
 });
 
 function Trip({id, title, description, classes}) {
+<<<<<<< HEAD
+=======
+
+  let history = useHistory();
+>>>>>>>  updated grid layout
   const tripRef = firestore.doc(`trips/${id}`);
+
+  const handleClick = () => {
+    history.push('/trips/'+id);
+  }
+
 return(
+<<<<<<< HEAD
 
         <Card className={classes.card}>
             <CardContent>
+=======
+        <Card className={classes.card}>
+          <CardActionArea onClick={handleClick}>
+          <CardContent>
+>>>>>>>  updated grid layout
               <Typography variant="h4">{title}</Typography>
               <Typography variant="caption">{description}</Typography>  
               <IconButton onClick={() => tripRef.delete()} aria-label="delete">
               <DeleteIcon color="primary"/>
               </IconButton>
             </CardContent>
+          </CardActionArea>
         </Card>
 )
 }

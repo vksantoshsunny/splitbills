@@ -6,11 +6,10 @@ import Grid from "@material-ui/core/Grid";
 function Trips(){
     const trips = useContext(TripsContext);
  return(
-     <Grid container>
-         {trips.map(trip =><Grid key={trip.id} item xs={12} md={4}>
-            <Trip {...trip}  />
-         </Grid> )}
-     </Grid>
+     <div>
+         {trips.map(trip => <Trip {...trip} key={trip.id} />)}
+         <AddTrip/>
+     </div>
  )
 }
 

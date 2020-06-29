@@ -30,7 +30,7 @@ function AddTrip(){
     return(
         <div>
         <Fab aria-label="add" onClick={handleClickOpen}>
-        <AddIcon />
+        <AddIcon color="primary"/>
         </Fab>
         <Dialog open={open} aria-labelledby="form-dialog-title">
         <DialogTitle>Add Trip</DialogTitle>
