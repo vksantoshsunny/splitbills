@@ -1,16 +1,16 @@
 import React, { useContext } from 'react';
 import Trip from './Trip'
-import AddTrip from './AddTrip'
 import { TripsContext } from '../providers/TripsProvider';
+import Grid from "@material-ui/core/Grid";
 
 function Trips(){
     const trips = useContext(TripsContext);
-    console.log('trips in component', trips)
  return(
-     <div>
-         {trips.map(trip => <Trip {...trip} key={trip.id} />)}
-         <AddTrip/>
-     </div>
+     <Grid container>
+         {trips.map(trip =><Grid key={trip.id} item xs={12} md={4}>
+            <Trip {...trip}  />
+         </Grid> )}
+     </Grid>
  )
 }
 

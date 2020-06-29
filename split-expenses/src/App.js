@@ -14,8 +14,6 @@ function App() {
     <MuiThemeProvider theme={Theme}>
       <UserProvider>
       <TripsProvider>
-      <Header/>
-      <Link to="/"><h1>App</h1></Link>
       <Switch>
       <Route path="/" component={Home} />
       </Switch>

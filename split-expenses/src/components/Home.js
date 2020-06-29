@@ -3,6 +3,7 @@ import Trips from './Trips';
 import SignIn from './SignIn';
 import Signout from './SignOut';
 import { UserContext } from '../providers/UserProvider';
+import AddTrip from './AddTrip'
 
 
 
@@ -14,8 +15,8 @@ const  Home = () => {
 
     return (
         <div>
-        <h1>Split Expense</h1>
         <Trips />
+        <AddTrip />
         <Signout/>
         </div>
     )
