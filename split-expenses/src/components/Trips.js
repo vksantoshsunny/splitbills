@@ -8,7 +8,6 @@ function Trips(){
  return(
      <div>
          {trips.map(trip => <Trip {...trip} key={trip.id} />)}
-         <AddTrip/>
      </div>
  )
 }

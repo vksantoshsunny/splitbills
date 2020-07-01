@@ -3,10 +3,8 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import React from 'react';
 import { firestore } from './Firebase'
 import { withStyles } from "@material-ui/core/styles";
-<<<<<<< HEAD
-=======
 import { useHistory } from 'react-router-dom';
->>>>>>>  updated grid layout
+
 
 
 const styles = muiBaseTheme => ({
@@ -44,12 +42,8 @@ const styles = muiBaseTheme => ({
   }
 });
 
-function Trip({id, title, description, classes}) {
-<<<<<<< HEAD
-=======
-
+function Trip({id, title, description, classes}) {  
   let history = useHistory();
->>>>>>>  updated grid layout
   const tripRef = firestore.doc(`trips/${id}`);
 
   const handleClick = () => {
@@ -57,15 +51,9 @@ function Trip({id, title, description, classes}) {
   }
 
 return(
-<<<<<<< HEAD
-
-        <Card className={classes.card}>
-            <CardContent>
-=======
         <Card className={classes.card}>
           <CardActionArea onClick={handleClick}>
           <CardContent>
->>>>>>>  updated grid layout
               <Typography variant="h4">{title}</Typography>
               <Typography variant="caption">{description}</Typography>  
               <IconButton onClick={() => tripRef.delete()} aria-label="delete">
