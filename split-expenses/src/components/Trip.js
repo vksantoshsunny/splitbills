@@ -46,6 +46,8 @@ function Trip({id, title, description, classes}) {
   let history = useHistory();
   const tripRef = firestore.doc(`trips/${id}`);
 
+
+  
   const handleClick = () => {
     history.push('/trips/'+id);
   }
