@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {    useParams  } from "react-router-dom";
 import {firestore} from './Firebase'
+import AddExpense from './AddExpense';
 
 function TripDetails() {
     const { id } = useParams();
@@ -28,6 +29,7 @@ function TripDetails() {
            <div>{expense.purpose}</div>
            <div>{expense.charge}</div>
          </div> )}
+         <AddExpense tripId={id}/>
         </div>
     )
 }
