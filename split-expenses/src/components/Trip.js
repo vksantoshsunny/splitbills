@@ -10,7 +10,7 @@ import { useHistory } from 'react-router-dom';
 const styles = muiBaseTheme => ({
   card: {
     maxWidth: 600,
-    margin: "auto",
+    marginTop: 20,
     transition: "0.3s",
     boxShadow: "0 8px 40px -12px rgba(0,0,0,0.3)",
     "&:hover": {

@@ -4,6 +4,7 @@ import SignIn from './SignIn';
 import Signout from './SignOut';
 import { UserContext } from '../providers/UserProvider';
 import AddTrip from './AddTrip'
+import Layout from './Layout'
 
 
 
@@ -15,6 +16,7 @@ const  Home = () => {
 
     return (
         <div>
+
         <Trips />
         <AddTrip />
         <Signout/>
@@ -22,4 +24,4 @@ const  Home = () => {
     )
 }
 
-export default Home;
+export default Layout(Home);
